@@ -1,0 +1,202 @@
+:root {
+  --bg: #ffffff;
+  --fg: #16191d;
+  --muted: #5d6673;
+  --line: #e3e7ec;
+  --accent: #1f5eff;
+  --danger: #b3261e;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 24px;
+  font-size: 0.9rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+th {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+button {
+  font: inherit;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+}
+
+.status-refunded,
+.status-partiallyrefunded {
+  background: #fff4e5;
+}
+
+.status-failed {
+  background: #fdecea;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 19, 23, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.dialog {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  width: min(480px, 100%);
+}
+
+.dialog h2 {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+}
+
+.summary {
+  margin: 0 0 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+
+.summary dt {
+  color: var(--muted);
+}
+
+.summary dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+textarea {
+  width: 100%;
+  font: inherit;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  resize: vertical;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin: 8px 0 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101317;
+    --fg: #e9edf2;
+    --muted: #9aa5b4;
+    --line: #262c34;
+  }
+
+  button {
+    background: #171b21;
+    color: inherit;
+  }
+
+  .dialog {
+    background: #171b21;
+  }
+
+  .status-refunded,
+  .status-partiallyrefunded {
+    background: #3a2e18;
+  }
+
+  .status-failed {
+    background: #3a1f1d;
+  }
+}

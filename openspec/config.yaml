@@ -1,0 +1,37 @@
+schema: spec-driven
+
+context: |
+  PaymentLab is a simplified PJP (Penyedia Jasa Pembayaran) back office.
+  Stack: ASP.NET Core 8 minimal API (backend/src/PaymentLab.Api) with xunit,
+  and React 18 + Vite + TypeScript (frontend) with vitest. No database — the
+  ledger is an in-memory store behind ITransactionStore.
+
+  Money is Money(long Units, string Currency); Units is a whole rupiah.
+  Never double/float. All fee arithmetic floors to a whole rupiah.
+  Every money movement is idempotent on Idempotency-Key and writes an IAuditLog
+  entry in the same code path as the posting.
+
+  Red zones that require a named human approver before commit: nominal logic,
+  sensitive data, production configuration, audit trail, idempotency and
+  authorisation, irreversible operations. See CLAUDE.md section 4.
+
+  Definition of done for every change: ./scripts/verify.sh is green
+  (dotnet test + npm test + typecheck + build).
+
+rules:
+  proposal:
+    - State the operational problem in one paragraph, not the solution.
+    - Name which red zones (R1-R6) the change touches, or write "none".
+    - Name the human approver required before merge.
+  specs:
+    - Write acceptance criteria as Given / When / Then scenarios that a test can assert.
+    - Every monetary scenario carries concrete numbers, including at least one
+      case where 0.7% MDR lands on a fraction.
+    - State explicitly what is OUT of scope.
+    - List the files the agent may touch, and the files it must not.
+  design:
+    - Prefer extending FeeCalculator, RefundService and ITransactionStore over new abstractions.
+    - Say how the change behaves on retry and on partial failure.
+  tasks:
+    - Each task ends in a runnable check, not "implement X".
+    - The last task is always "run ./scripts/verify.sh and report".

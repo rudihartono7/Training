@@ -1,0 +1,6 @@
+peserta,task_id,spec_questions,plan_corrections,agent_turns,interventions,guardrail_blocks,tests_green_first_try,review_rework_rounds,escaped_defects,wall_clock_min,catatan
+contoh-budi,add-partial-refund,1,1,14,3,1,0,1,0,32,"intervensi: cap dicek ke gross; Math.Round; status tidak pernah Refunded"
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
