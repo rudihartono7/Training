@@ -1,10 +1,9 @@
-# Template spec eksekutabel
+# Template executable spec
 
 Salin isi file ini ke `openspec/changes/<nama-change>/` dan isi setiap bagian.
-Aturannya sederhana: **kalau sebuah kalimat tidak bisa dijadikan test atau
-tidak bisa membuat agent berhenti, kalimat itu belum layak masuk spec.**
+Aturannya sederhana: **kalau sebuah kalimat tidak bisa dijadikan test atau tidak bisa membuat agent berhenti, kalimat itu belum layak masuk spec.**
 
-Enam bagian di bawah ini yang membedakan spec eksekutabel dari tiket Jira.
+Enam bagian di bawah ini yang membedakan executable spec dari tiket/task yang ada di project management tools (Jira).
 
 ---
 

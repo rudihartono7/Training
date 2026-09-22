@@ -49,7 +49,7 @@ belum selesai.
 ---
 
 <!--
-Metadata perawatan (isi, jangan dihapus):
+Metadata maintain record skill (isi, jangan dihapus):
 
 Pemilik      : <nama>
 Dibuat       : <tanggal> — setelah pola ini berulang <N> kali
